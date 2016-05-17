@@ -1,38 +1,59 @@
 import {Component} from 'angular2/core';
 
-export class Hero {
+export class Show {
     id: number;
     name: string;
+    genre: string;
+    support: string;
 }
 
 @Component({
     selector: 'helloworld-app',
-    template:`
+/*    template:`
     <h1>{{title}}</h1>
-    <h2>My Heroes</h2>
-    <ul class="heroes">
-        <li *ngFor="let hero of heroes; let i = index">
-            {{i}}. {{hero.name}}
+    <h2>My Shows</h2>
+    <ul class="shows">
+        <li *ngFor="let show of shows; let i = index">
+            {{i}}. {{show.name}}
       </li>
     </ul>
-        <div><label>id: </label>{{hero.id}}</div>
+        <div><label>id: </label>{{show.id}}</div>
         <div>
           <label>name: </label>
-          <input [(ngModel)]="hero.name" placeholder="name">
+          <input [(ngModel)]="show.name" placeholder="name">
         </div>
-    `,
+    `,*/
+    template:`
+    <h1>{{title}}</h1>
+    <h2>My Shows</h2>
+    <ul class="shows">
+      <li *ngFor="let show of shows"
+        [class.selected]="show === selectedShow"
+        (click)="onSelect(show)">
+        <span class="badge">{{show.id}}</span> {{show.name}}
+      </li>
+    </ul>
+    <div *ngIf="selectedShow">
+      <h2>{{selectedShow.name}} details!</h2>
+      <div><label>id: </label>{{selectedShow.id}}</div>
+      <div>
+        <label>name: </label>
+        <input [(ngModel)]="selectedShow.name" placeholder="name"/>
+      </div>
+    </div>
+  `,
     styles:[`
           .selected {
             background-color: #CFD8DC !important;
             color: white;
           }
-          .heroes {
+          .shows {
             margin: 0 0 2em 0;
             list-style-type: none;
             padding: 0;
             width: 15em;
           }
-          .heroes li {
+          .shows li {
             cursor: pointer;
             position: relative;
             left: 0;
@@ -42,20 +63,20 @@ export class Hero {
             height: 1.6em;
             border-radius: 4px;
           }
-          .heroes li.selected:hover {
+          .shows li.selected:hover {
             background-color: #BBD8DC !important;
             color: white;
           }
-          .heroes li:hover {
+          .shows li:hover {
             color: #607D8B;
             background-color: #DDD;
             left: .1em;
           }
-          .heroes .text {
+          .shows .text {
             position: relative;
             top: -3px;
           }
-          .heroes .badge {
+          .shows .badge {
             display: inline-block;
             font-size: small;
             color: white;
@@ -73,20 +94,16 @@ export class Hero {
 })
 
 export class AppComponent {
-    title = 'Tour of Heroes';
-    heroes = HEROES;
+    title = 'Your Shows';
+    shows = SHOWS;
 
 }
 
-var HEROES: Hero[] = [
-    { "id": 11, "name": "Mr. Nice" },
-    { "id": 12, "name": "Narco" },
-    { "id": 13, "name": "Bombasto" },
-    { "id": 14, "name": "Celeritas" },
-    { "id": 15, "name": "Magneta" },
-    { "id": 16, "name": "RubberMan" },
-    { "id": 17, "name": "Dynama" },
-    { "id": 18, "name": "Dr IQ" },
-    { "id": 19, "name": "Magma" },
-    { "id": 20, "name": "Tornado" }
+var SHOWS: Show[] = [
+    { "id": 11, "name": "Zakk Wylde", "genre": "Rock", "support": "" },
+    { "id": 12, "name": "Municipal Waste", "genre": "Thrash Metal", "support": "Reactory" },
+    { "id": 13, "name": "Devil Driver", "genre": "Modern Metal", "support": "" },
+    { "id": 14, "name": "Napalm Death", "genre": "Grind Core", "support": "Hammercult" },
+    { "id": 15, "name": "Mastodon", "genre": "Progressive Metal", "support": "" },
+    { "id": 16, "name": "Overkill", "genre": "Metal", "support": "Crowbar" }
 ];
