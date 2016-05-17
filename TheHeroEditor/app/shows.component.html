@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<h2>My Shows</h2>
+<ul class="shows">
+    <li *ngFor="#show of shows"
+        [class.selected]="show === selectedShow"
+        (click)="onSelect(show)">
+        <span class="badge">{{show.id}}</span> {{show.name}}
+    </li>
+</ul>
+<my-show-detail [show]="selectedShow"></my-show-detail>
