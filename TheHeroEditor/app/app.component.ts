@@ -1,27 +1,36 @@
 import {Component} from 'angular2/core';
 import { ShowsDetailComponent } from './shows-detail.component';
 import { Show } from './show';
+import {SHOWS} from "./mock-shows";
+import { ShowService } from '.show.service';
+import {OnInit} from '@angular2/core'
+import {OnInit} from "../../FirstApp/node_modules/angular2/src/core/metadata/lifecycle_hooks";
 
 
+
+export class AppComponent implements OnInit{
+
+    title = 'Your Shows';
+    shows = SHOWS;
+    constructor (private showService: ShowService){
+    }
+
+    getShows (){
+        this.shows = this.showService.getShows();
+    }
+
+    ngOnInit(){
+        this.getShows();
+    }
+
+}
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/shows.component.html',
-    styleUrls:  ['app/list_style.css']
+    styleUrls:  ['app/list_style.css'],
+    providers: [ShowService]
 })
 
-export class AppComponent {
-    title = 'Your Shows';
-    shows = SHOWS;
 
-}
-
-var SHOWS: Show[] = [
-    { "id": 11, "name": "Zakk ee ade", "genre": "Rock", "support": "" },
-    { "id": 12, "name": "Municipal Waste", "genre": "Thrash Metal", "support": "Reactory" },
-    { "id": 13, "name": "Devil Driver", "genre": "Modern Metal", "support": "" },
-    { "id": 14, "name": "Napalm Death", "genre": "Grind Core", "support": "Hammercult" },
-    { "id": 15, "name": "Mastodon", "genre": "Progressive Metal", "support": "" },
-    { "id": 16, "name": "Overkill", "genre": "Metal", "support": "Crowbar" }
-];
 
 
