@@ -16,7 +16,7 @@ export class AppComponent {
 }
 
 var SHOWS: Show[] = [
-    { "id": 11, "name": "Zakk Wylde", "genre": "Rock", "support": "" },
+    { "id": 11, "name": "Zakk ee ade", "genre": "Rock", "support": "" },
     { "id": 12, "name": "Municipal Waste", "genre": "Thrash Metal", "support": "Reactory" },
     { "id": 13, "name": "Devil Driver", "genre": "Modern Metal", "support": "" },
     { "id": 14, "name": "Napalm Death", "genre": "Grind Core", "support": "Hammercult" },
