@@ -6,15 +6,15 @@ import { Show } from './show';
 @Component({
     selector: 'my-show-detail',
     template: `
-            <div *ngIf="show">
-                <h2>{{show.name}} details!</h2>
-                <div><label>id: </label>{{show.id}}</div>
-                <div>
+        <div>
+            <h2>{{selectedHero.name}} details!</h2>
+            <div><label>id: </label>{{selectedHero.id}}</div>
+            <div>
                 <label>name: </label>
-            <input [(ngModel)]="show.name" placeholder="name"/>
+                <input [(ngModel)]="selectedHero.name" placeholder="name"/>
             </div>
-            </div>
-    `
+        </div>
+`
 })
 
 export class ShowsDetailComponent {

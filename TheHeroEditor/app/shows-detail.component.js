@@ -31,7 +31,7 @@ System.register(['angular2/core', './show'], function(exports_1, context_1) {
                 ShowsDetailComponent = __decorate([
                     core_1.Component({
                         selector: 'my-show-detail',
-                        template: "\n            <div *ngIf=\"show\">\n                <h2>{{show.name}} details!</h2>\n                <div><label>id: </label>{{show.id}}</div>\n                <div>\n                <label>name: </label>\n            <input [(ngModel)]=\"show.name\" placeholder=\"name\"/>\n            </div>\n            </div>\n    "
+                        template: "\n        <div>\n            <h2>{{selectedHero.name}} details!</h2>\n            <div><label>id: </label>{{selectedHero.id}}</div>\n            <div>\n                <label>name: </label>\n                <input [(ngModel)]=\"selectedHero.name\" placeholder=\"name\"/>\n            </div>\n        </div>\n"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ShowsDetailComponent);

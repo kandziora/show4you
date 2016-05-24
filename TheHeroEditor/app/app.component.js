@@ -23,6 +23,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.title = 'Your Shows';
                     this.shows = SHOWS;
                 }
+                AppComponent.prototype.onSelect = function (show) {
+                    this.selectedShow = show;
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'helloworld-app',

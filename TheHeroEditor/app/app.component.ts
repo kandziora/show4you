@@ -9,11 +9,19 @@ import { Show } from './show';
     styleUrls:  ['app/list_style.css']
 })
 
+
+
 export class AppComponent {
     title = 'Your Shows';
-    shows = SHOWS;
+    selectedShow : Show;
+    public shows = SHOWS;
 
+    onSelect(show: Show) {
+        this.selectedShow = show;
+    }
 }
+
+
 
 var SHOWS: Show[] = [
     { "id": 11, "name": "Zakk ee ade", "genre": "Rock", "support": "" },
