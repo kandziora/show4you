@@ -1,12 +1,18 @@
-import  { injectable } from '@angular/core';
-import {SHOWS} from "./mock-shows";
+import { Injectable }   from 'angular2/core';
+import { SHOWS }        from "./mock-shows";
+import { Show }         from './show';
 
 
-
-@injectable()
+@Injectable()
 export class ShowService{
     getShows(){
-        return SHOWS;
+        return Promise.resolve(SHOWS);
+    }
+
+    getShowSlowly(){
+        return new Promise<Show[]>(resolve =>
+                setTimeout(()=>resolve(SHOWS), 2000) // 2 seconds
+    );
     }
 }
 

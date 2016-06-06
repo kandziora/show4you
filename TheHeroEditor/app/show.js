@@ -6,7 +6,11 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             Show = (function () {
-                function Show() {
+                function Show(id, name, genre, support) {
+                    this.id = id;
+                    this.name = name;
+                    this.genre = genre;
+                    this.support = support;
                 }
                 return Show;
             }());

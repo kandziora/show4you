@@ -1,36 +1,46 @@
-import {Component} from 'angular2/core';
-import { ShowsDetailComponent } from './shows-detail.component';
-import { Show } from './show';
-import {SHOWS} from "./mock-shows";
-import { ShowService } from '.show.service';
-import {OnInit} from '@angular2/core'
-import {OnInit} from "../../FirstApp/node_modules/angular2/src/core/metadata/lifecycle_hooks";
+import {Component, OnInit}   from 'angular2/core';
+import {Show}                from './show';
+import {ShowDetailComponent} from './show-detail.component.ts';
+import {ShowService}         from "./show.service";
 
+
+@Component({
+    selector: 'helloworld-app',
+    templateUrl: 'app/show.component.html',
+    styleUrls:  ['app/list_style.css'],
+    directives: [ShowDetailComponent],
+    providers: [ShowService]
+})
 
 
 export class AppComponent implements OnInit{
 
-    title = 'Your Shows';
-    shows = SHOWS;
+    private title       : string;
+    private shows       : Show[];
+    private selectedShow: Show;
+
     constructor (private showService: ShowService){
+        this.title = 'Your Show';
     }
 
+
     getShows (){
-        this.shows = this.showService.getShows();
+        this.showService.getShows().then(shows => this.shows = shows);
     }
 
     ngOnInit(){
         this.getShows();
     }
 
+    getShowSlowly(){
+        this.showService.getShowSlowly().then(shows => this.shows = shows);
+    }
+
+    onSelect(show: Show) {
+        this.selectedShow = show;
+        console.log(this.selectedShow);
+    }
+
+
 }
-@Component({
-    selector: 'helloworld-app',
-    templateUrl: 'app/shows.component.html',
-    styleUrls:  ['app/list_style.css'],
-    providers: [ShowService]
-})
-
-
-
 
