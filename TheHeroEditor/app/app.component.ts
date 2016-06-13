@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import { ShowsDetailComponent } from './shows-detail.component';
 import { Show } from './show';
 
