@@ -1,9 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { Show } from './show';
-
-import { ShowDetailView } from './shows-detail-view.component';
-import { ShowDetailEdit } from './shows-detail-edit.component';
 import {ShowService} from "./show.service";
 
 @Component({
