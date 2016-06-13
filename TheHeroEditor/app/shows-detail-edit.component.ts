@@ -1,23 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { Show } from './show';
-<<<<<<< Updated upstream
-=======
-import { ShowDetailView } from './shows-detail-view.component';
-import { ShowDetailEdit } from './shows-detail-edit.component';
 import {ShowService} from "./show.service";
->>>>>>> Stashed changes
 
 
 
 @Component({
-    selector: 'my-show-detail',
+    selector: 'show-detail-edit',
+    styleUrls:  ['app/shows-detail.component.css'],
     template: `
-<<<<<<< Updated upstream
-        <div *ngIf="show">
-=======
-        <div id="detail_show">
->>>>>>> Stashed changes
+        <div *ngIf="show" id="detail_show">
             <h2>{{show.name}} details!</h2>
             
             <div><label>id: </label>{{show.id}}</div>
@@ -33,21 +25,15 @@ import {ShowService} from "./show.service";
                 <label>support: </label>
                 <input [(ngModel)]="show.support" placeholder="support"/>
             </div>
-<<<<<<< Updated upstream
-=======
             <div>
                 <label>date: </label>
                 <input [(ngModel)]="show.date" placeholder="date"/>
             </div>
-            
-            <button (click)="save()">Save</button>
-
->>>>>>> Stashed changes
         </div>
 `
 })
 
-export class ShowsDetailComponent implements OnInit {
+export class ShowDetailEdit implements OnInit {
     @Input()
     show: Show;
 
@@ -61,9 +47,8 @@ export class ShowsDetailComponent implements OnInit {
         private showService: ShowService) {
     }
 
-
     ngOnInit() {
-        if (this.show !== undefined) {
+        if (this.show.id !== null) {
             let id = +this.show.id;
             this.navigated = true;
             this.showService.getShow(id)
@@ -72,7 +57,6 @@ export class ShowsDetailComponent implements OnInit {
             this.navigated = false;
             this.show = new Show();
         }
-
     }
 
     save() {
@@ -80,10 +64,9 @@ export class ShowsDetailComponent implements OnInit {
             .save(this.show)
             .then(show => {
                 this.show = show; // saved show, w/ id if new
-                this.close.emit(show);
-                console.log(this.show);
+                this.goBack(show);
             })
-            // .catch(error => this.error = error); // TODO: Display error message
+            .catch(error => this.error = error); // TODO: Display error message
     }
 
     goBack(savedShow: Show = null) {
