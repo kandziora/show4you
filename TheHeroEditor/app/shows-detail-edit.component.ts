@@ -1,21 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { Show } from './show';
-import { ShowDetailView } from './shows-detail-view.component';
-import { ShowDetailEdit } from './shows-detail-edit.component';
 
 
 
 @Component({
-    selector: 'my-show-detail',
+    selector: 'show-detail-edit',
     styleUrls:  ['app/shows-detail.component.css'],
     template: `
         <div *ngIf="show" id="detail_show">
             <h2>{{show.name}} details!</h2>
-            <h3>
-            <ul>
-                <li>edit</li>
-            </ul>
-            </h3>
             
             <div><label>id: </label>{{show.id}}</div>
             <div>
@@ -35,11 +28,10 @@ import { ShowDetailEdit } from './shows-detail-edit.component';
                 <input [(ngModel)]="show.date" placeholder="date"/>
             </div>
         </div>
-`,
-    directives: [ShowDetailView, ShowDetailEdit]
+`
 })
 
-export class ShowsDetailComponent {
+export class ShowDetailEdit {
     @Input()
     show: Show;
 }
