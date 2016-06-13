@@ -1,16 +1,10 @@
-<<<<<<< Updated upstream
-import {Component} from '@angular/core';
-import { ShowsDetailComponent } from './shows-detail.component';
-import { Show } from './show';
 
-=======
 import { Component, OnInit } from '@angular/core';
 
 import { Show } from './show';
 import { NavigationComponent } from './nav.component';
 import { ShowService } from './show.service.ts';
 import { ShowsDetailComponent } from './shows-detail.component';
->>>>>>> Stashed changes
 
 @Component({
     selector: 'helloworld-app',
@@ -20,14 +14,7 @@ import { ShowsDetailComponent } from './shows-detail.component';
     directives: [ShowsDetailComponent]
 })
 
-<<<<<<< Updated upstream
 
-
-export class AppComponent {
-    title = 'Your Shows';
-    selectedShow : Show;
-    public shows = SHOWS;
-=======
 export class AppComponent implements OnInit {
     private title : string;
     shows: Show[];

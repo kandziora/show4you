@@ -1,11 +1,4 @@
 export class Show {
-<<<<<<< Updated upstream
-    id: number;
-    name: string;
-    genre: string;
-    support: string;
-}
-=======
      id              : number;
      name            : string;
      genre           : string;
@@ -21,4 +14,3 @@ export class Show {
         this.date               = date;
     }
 }
->>>>>>> Stashed changes

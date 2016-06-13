@@ -1,23 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { Show } from './show';
-<<<<<<< Updated upstream
-=======
+
 import { ShowDetailView } from './shows-detail-view.component';
 import { ShowDetailEdit } from './shows-detail-edit.component';
 import {ShowService} from "./show.service";
->>>>>>> Stashed changes
-
-
 
 @Component({
     selector: 'my-show-detail',
     template: `
-<<<<<<< Updated upstream
-        <div *ngIf="show">
-=======
         <div id="detail_show">
->>>>>>> Stashed changes
             <h2>{{show.name}} details!</h2>
             
             <div><label>id: </label>{{show.id}}</div>
@@ -33,16 +25,12 @@ import {ShowService} from "./show.service";
                 <label>support: </label>
                 <input [(ngModel)]="show.support" placeholder="support"/>
             </div>
-<<<<<<< Updated upstream
-=======
             <div>
                 <label>date: </label>
                 <input [(ngModel)]="show.date" placeholder="date"/>
             </div>
             
             <button (click)="save()">Save</button>
-
->>>>>>> Stashed changes
         </div>
 `
 })
@@ -83,7 +71,7 @@ export class ShowsDetailComponent implements OnInit {
                 this.close.emit(show);
                 console.log(this.show);
             })
-            // .catch(error => this.error = error); // TODO: Display error message
+            .catch(error => this.error = error); // TODO: Display error message
     }
 
     goBack(savedShow: Show = null) {
