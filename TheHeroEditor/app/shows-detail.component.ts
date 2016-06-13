@@ -12,9 +12,7 @@ import { ShowDetailEdit } from './shows-detail-edit.component';
         <div *ngIf="show" id="detail_show">
             <h2>{{show.name}} details!</h2>
             <h3>
-            <ul>
-                <li>edit</li>
-            </ul>
+            edit            
             </h3>
             
             <div><label>id: </label>{{show.id}}</div>
