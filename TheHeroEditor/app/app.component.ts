@@ -1,46 +1,49 @@
-import {Component, OnInit}   from 'angular2/core';
-import {Show}                from './show';
-import {ShowDetailComponent} from './show-detail.component.ts';
-import {ShowService}         from "./show.service";
+import { Component, OnInit } from '@angular/core';
+import { Show } from './show';
+import { ShowsDetailComponent } from './shows-detail.component';
+import { NavigationComponent } from './nav.component';
+import { ShowService } from './show.service.ts';
+
+
 
 
 @Component({
     selector: 'helloworld-app',
-    templateUrl: 'app/show.component.html',
+    templateUrl: 'app/shows.component.html',
     styleUrls:  ['app/list_style.css'],
-    directives: [ShowDetailComponent],
+    directives: [ShowsDetailComponent, NavigationComponent],
     providers: [ShowService]
 })
 
 
-export class AppComponent implements OnInit{
 
-    private title       : string;
-    private shows       : Show[];
-    private selectedShow: Show;
 
-    constructor (private showService: ShowService){
-        this.title = 'Your Show!';
+export class AppComponent {
+
+    private title : string;
+    private selectedShow : Show;
+    private shows : Show[];
+
+
+    constructor (private showService: ShowService) {
+        this.title = 'Shows for you';
     }
-
-
-    getShows (){
-        this.showService.getShows().then(shows => this.shows = shows);
-    }
-
-    ngOnInit(){
-        this.getShows();
-    }
-
-    getShowSlowly(){
-        this.showService.getShowSlowly().then(shows => this.shows = shows);
-    }
-
+    
     onSelect(show: Show) {
         this.selectedShow = show;
         console.log(this.selectedShow);
     }
 
+    getShows() {
+        this.showService.getShows().then(shows => this.shows = shows);
+    }
+    ngOnInit() {
+        this.getShows();
+    }
 
 }
+
+
+
+
 

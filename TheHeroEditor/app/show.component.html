@@ -1,12 +1,14 @@
+
+<navigation-component ></navigation-component>
 <h1>{{title}}</h1>
 <h2>My Shows</h2>
 <ul class="shows">
-    <li *ngFor="#show of shows"
+    <li *ngFor="let show of shows"
         [class.selected]="show === selectedShow"
         (click)="onSelect(show)">
-        <span class="badge">{{show.id}}</span> {{show.name}}
+
+    <span class="badge">{{show.id}}</span> {{show.name}}
     </li>
 </ul>
-<template [ngIf]="selectedShow">
-    <my-show-detail [show]="selectedShow"></my-show-detail>
-</template>
+
+<my-show-detail [show]="selectedShow">Loading details</my-show-detail>
