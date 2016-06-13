@@ -18,4 +18,4 @@
     <my-show-detail *ngIf="!selectedShow" (close)="close($event)"></my-show-detail>
 </div>
 
-<my-show-detail *ngIf="selectedShow" [show]="selectedShow">Loading details</my-show-detail>
+<my-show-detail *ngIf="selectedShow" [show]="selectedShow" (close)="close($event)">Loading details</my-show-detail>
