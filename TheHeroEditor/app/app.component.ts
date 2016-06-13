@@ -6,7 +6,9 @@ import { Show } from './show';
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/shows.component.html',
-    styleUrls:  ['app/list_style.css']
+    styleUrls:  ['app/list_style.css'],
+    // Angular doesn't know about the my-hero-detail tag, so we have to tell Angular to use the new directive
+    directives: [ShowsDetailComponent]
 })
 
 
@@ -18,6 +20,7 @@ export class AppComponent {
 
     onSelect(show: Show) {
         this.selectedShow = show;
+        console.log(this.selectedShow);
     }
 }
 
