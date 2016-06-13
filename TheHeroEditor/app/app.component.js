@@ -27,7 +27,7 @@ System.register(['angular2/core', './show-detail.component.ts', "./show.service"
             AppComponent = (function () {
                 function AppComponent(showService) {
                     this.showService = showService;
-                    this.title = 'Your Show';
+                    this.title = 'Your Show!';
                 }
                 AppComponent.prototype.getShows = function () {
                     var _this = this;

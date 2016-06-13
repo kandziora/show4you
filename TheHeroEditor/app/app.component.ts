@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
     private selectedShow: Show;
 
     constructor (private showService: ShowService){
-        this.title = 'Your Show';
+        this.title = 'Your Show!';
     }
 
 
