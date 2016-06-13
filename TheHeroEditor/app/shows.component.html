@@ -1,29 +1,12 @@
 <h1>{{title}}</h1>
 <h2>My Shows</h2>
 <ul class="shows">
-    <li *ngFor="let show of shows" (click)="onSelect(show)">
+    <li *ngFor="let show of shows"
+        [class.selected]="show === selectedShow"
+        (click)="onSelect(show)">
 
     <span class="badge">{{show.id}}</span> {{show.name}}
     </li>
 </ul>
 
-<div *ngIf="selectedShow">
-<!--<div>-->
-    <h2>{{selectedShow.name}} details!</h2>
-    <div><label>id: </label>{{selectedShow.id}}</div>
-    <div>
-        <label>name: </label>
-        <input [(ngModel)]="selectedShow.name" placeholder="name"/>
-    </div>
-    <div>
-        <label>genre: </label>
-        <input [(ngModel)]="selectedShow.genre" placeholder="genre"/>
-    </div>
-    <div>
-        <label>support: </label>
-        <input [(ngModel)]="selectedShow.support" placeholder="support"/>
-    </div>
-</div>
-
-
-<!--<my-show-detail [show]="selectedShow"></my-show-detail>-->
+<my-show-detail [show]="selectedShow"></my-show-detail>
