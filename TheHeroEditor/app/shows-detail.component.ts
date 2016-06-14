@@ -58,8 +58,6 @@ export class ShowsDetailComponent implements OnInit {
         if (this.show !== undefined) {
             let id = +this.show.id;
             this.navigated = true;
-            this.showService.getShow(id)
-                .then(show => this.show = show);
         } else {
             this.navigated = false;
             this.show = new Show();
