@@ -58,9 +58,6 @@ export class AppComponent implements OnInit {
             })
             .catch(error => this.error = error); // TODO: Display error message
     }
-
-    ngOnInit() {
-        this.getShows();
-    }
+    
 }
 
