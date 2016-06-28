@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { Show } from './show';
-import { ShowDetailView } from './shows-detail-view.component';
-import { ShowDetailEdit } from './shows-detail-edit.component';
-
-
+import {ShowService} from "./show.service";
+import {ShowDetailView} from "./shows-detail-view.component";
+import {ShowDetailEdit} from "./shows-detail-edit.component";
 
 @Component({
     selector: 'my-show-detail',
@@ -32,12 +32,54 @@ import { ShowDetailEdit } from './shows-detail-edit.component';
                 <label>date: </label>
                 <input [(ngModel)]="show.date" placeholder="date"/>
             </div>
+            
+            <button (click)="save()">Save</button>
         </div>
 `,
     directives: [ShowDetailView, ShowDetailEdit]
 })
 
-export class ShowsDetailComponent {
+export class ShowsDetailComponent implements OnInit {
     @Input()
     show: Show;
+
+    @Output()
+    close = new EventEmitter();
+
+    error: any;
+    navigated = false; // true if navigated here
+
+    constructor(
+        private showService: ShowService) {
+    }
+
+
+    ngOnInit() {
+        if (this.show !== undefined) {
+            let id = +this.show.id;
+            this.navigated = true;
+            this.showService.getShow(id)
+                .then(show => this.show = show);
+        } else {
+            this.navigated = false;
+            this.show = new Show();
+        }
+
+    }
+
+    save() {
+        this.showService
+            .save(this.show)
+            .then(show => {
+                this.show = show; // saved show, w/ id if new
+                this.close.emit(show);
+                console.log(this.show);
+            })
+            .catch(error => this.error = error); // TODO: Display error message
+    }
+
+    goBack(savedShow: Show = null) {
+        this.close.emit(savedShow);
+        if (this.navigated) { window.history.back(); }
+    }
 }
