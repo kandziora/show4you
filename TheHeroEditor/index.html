@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <title>My First App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,21 +33,24 @@
                 '@angular/compiler'                 : 'node_modules/@angular/compiler',
                 '@angular/platform-browser'         : 'node_modules/@angular/platform-browser',
                 '@angular/platform-browser-dynamic' : 'node_modules/@angular/platform-browser-dynamic',
+                '@angular/router'                   : 'node_modules/@angular/router',
 
                 'angular2-in-memory-web-api' : 'node_modules/angular2-in-memory-web-api'
+
             },
             packages: {
-                'app'                              : {main: 'main.ts', defaultExtension: 'ts'},
-                'rxjs'                             : {main: 'index.js'},
+                'app'                               : {main: 'main.ts', defaultExtension: 'ts'},
+                'rxjs'                              : {main: 'index.js'},
 
-                '@angular/core'                    : {main: 'index.js'},
-                '@angular/http'                    : {main: 'index.js'},
-                '@angular/common'                  : {main: 'index.js'},
-                '@angular/compiler'                : {main: 'index.js'},
-                '@angular/platform-browser'        : {main: 'index.js'},
-                '@angular/platform-browser-dynamic': {main: 'index.js'},
+                '@angular/core'                     : {main: 'index.js'},
+                '@angular/http'                     : {main: 'index.js'},
+                '@angular/common'                   : {main: 'index.js'},
+                '@angular/compiler'                 : {main: 'index.js'},
+                '@angular/platform-browser'         : {main: 'index.js'},
+                '@angular/platform-browser-dynamic' : {main: 'index.js'},
+                '@angular/router'                   : {main: 'index.js'},
 
-                'angular2-in-memory-web-api'       : {main: 'index.js'}
+                'angular2-in-memory-web-api'        : {main: 'index.js'}
             }
         });
         System.import('app/main')

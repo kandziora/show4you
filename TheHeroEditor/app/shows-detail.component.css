@@ -1,3 +1,7 @@
+* {
+
+    color: black;
+}
 label {
     display: inline-block;
     width: 5em;

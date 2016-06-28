@@ -1,21 +1,23 @@
-
-<navigation-component ></navigation-component>
 <h1>{{title}}</h1>
-<h2>My Shows</h2>
-<ul class="shows">
-    <li *ngFor="let show of shows" class="items"
-        [class.selected]="show === selectedShow"
-        (click)="onSelect(show)">
 
-    <span class="badge">{{show.id}}</span> {{show.name}}
-    <button style="float: right;" class="delete-button" (click)="delete(show, $event)">Delete</button>
+<nav >
+    <ul>
+        <li >
+            <span><a [routerLink]="['/event-list']">Eventlist</a></span>
+        </li>
+        <li>
+            <span><a [routerLink]="['/event-list']">Add Show</a></span>
+        </li>
+        <li>
+            <span><a [routerLink]="['/map']">Maps</a></span>
+        </li>
+        <li>
+            <span><a [routerLink]="['/event-list']">Calender</a></span>
+        </li>
+        <li>
+            <span><a [routerLink]="['/event-list']">Venues</a></span>
+        </li>
+    </ul>
 
-    </li>
-</ul>
-
-<button (click)="addShow()">Add New Show</button>
-<div *ngIf="addingShow">
-    <my-show-detail *ngIf="!selectedShow" (close)="close($event)"></my-show-detail>
-</div>
-
-<my-show-detail *ngIf="selectedShow" [show]="selectedShow" (close)="close($event)">Loading details</my-show-detail>
+</nav>
+<router-outlet></router-outlet>

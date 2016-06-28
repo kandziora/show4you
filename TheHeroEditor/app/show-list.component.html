@@ -1,0 +1,18 @@
+<h2>All Events</h2>
+<ul class="shows">
+    <li *ngFor="let show of shows" class="items"
+        [class.selected]="show === selectedShow"
+        (click)="onSelect(show)">
+
+    <span class="badge">{{show.id}}</span> {{show.name}}
+    <button style="float: right;" class="delete-button" (click)="delete(show, $event)">Delete</button>
+
+    </li>
+</ul>
+
+<button (click)="addShow()">Add New Show</button>
+<div *ngIf="addingShow">
+    <my-show-detail *ngIf="!selectedShow" (close)="close($event)"></my-show-detail>
+</div>
+
+<my-show-detail *ngIf="selectedShow" [show]="selectedShow" (close)="close($event)">Loading details</my-show-detail>

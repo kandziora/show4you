@@ -19,6 +19,7 @@ export class ShowService {
             .catch(this.handleError);
     }
 
+
     getShow(id: number) {
         return this.getShows()
             .then(shows => shows.filter(show => show.id === id)[0]);
