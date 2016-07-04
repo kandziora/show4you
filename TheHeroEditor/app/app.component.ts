@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GOOGLE_MAPS_DIRECTIVES } from 'angular2-google-maps/core';
 
 import { Show } from './show';
 import { NavigationComponent } from './nav.component';
@@ -9,7 +10,7 @@ import { ShowsDetailComponent } from './shows-detail.component';
     selector: 'helloworld-app',
     templateUrl: 'app/shows.component.html',
     styleUrls:  ['app/list_style.css'],
-    directives: [ShowsDetailComponent, NavigationComponent],
+    directives: [ShowsDetailComponent, NavigationComponent, GOOGLE_MAPS_DIRECTIVES],
     providers: [ShowService]
 
 })
@@ -21,6 +22,9 @@ export class AppComponent implements OnInit {
     selectedShow: Show;
     addingShow = false;
     error: any;
+    
+    lat: number = 52.505753;
+    lng: number = 13.364878;
 
     constructor (private showService: ShowService) {
         this.title = 'Shows for you';

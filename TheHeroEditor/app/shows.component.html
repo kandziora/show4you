@@ -19,3 +19,15 @@
 </div>
 
 <my-show-detail *ngIf="selectedShow" [show]="selectedShow" (close)="close($event)">Loading details</my-show-detail>
+
+
+
+
+<h1>Jorge GoogleMaps : {{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+
+<sebm-google-map [latitude]="lat" [longitude]="lng">
+    <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+</sebm-google-map>
