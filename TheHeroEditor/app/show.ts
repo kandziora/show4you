@@ -8,7 +8,7 @@ export class Show {
     address_lat:number;
     address_lng:number;
 
-    constructor(id:number = 0, name:string = "new Show", genre:string = "misc.", support:string = "", date:Date = new Date(2016, 6, 12), address:string = "Berlin, Germany", address_lat:number = 52.52000659999999, address_lng:number = 13.404954) {
+    constructor(id:number = 0, name:string = "new Show", genre:string = "misc.", support:string = "", date:Date = new Date(2016, 6, 12), address:string = "Berlin, Germany", address_lat:number = 52.5243700, address_lng:number = 13.4105300) {
         this.id = id;
         this.name = name;
         this.genre = genre;
