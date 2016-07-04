@@ -32,6 +32,18 @@ import {ShowDetailEdit} from "./shows-detail-edit.component";
                 <label>date: </label>
                 <input [(ngModel)]="show.date" placeholder="date"/>
             </div>
+            <div>
+                <label>address: </label>
+                <input [(ngModel)]="show.address" placeholder="Berlin, Germany"/>
+            </div>
+            <div>
+                <label>lat: </label>
+                <input [(ngModel)]="show.address_lat" placeholder="52.52000659999999"/>
+            </div>
+            <div>
+                <label>lng: </label>
+                <input [(ngModel)]="show.address_lng" placeholder="13.404954"/>
+            </div>
             
             <button (click)="save()">Save</button>
         </div>
