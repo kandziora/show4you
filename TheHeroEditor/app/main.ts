@@ -1,6 +1,7 @@
 // Imports for loading & configuring the in-memory web api
 import {provide}    from '@angular/core';
 import {XHRBackend} from '@angular/http';
+import {ROUTER_PROVIDERS} from '@angular/router';
 
 import {InMemoryBackendService, SEED_DATA} from 'angular2-in-memory-web-api';
 import {InMemoryDataService}               from './in-memory-data.service';
@@ -17,5 +18,6 @@ bootstrap(AppComponent, [
     provide(XHRBackend, {useClass: InMemoryBackendService}), // in-mem server
     provide(SEED_DATA, {useClass: InMemoryDataService}),     // in-mem server data
     GOOGLE_MAPS_PROVIDERS,
-    provideLazyMapsAPILoaderConfig({ apiKey: 'AIzaSyD8AJcFWCcvuLGT0mUjaUUJC6uKYy1-c9c' })
+    provideLazyMapsAPILoaderConfig({ apiKey: 'AIzaSyD8AJcFWCcvuLGT0mUjaUUJC6uKYy1-c9c' }),
+    ROUTER_PROVIDERS
 ]);
