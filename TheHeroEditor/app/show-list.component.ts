@@ -3,7 +3,7 @@ import {GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
 import {Router} from '@angular/router';
 
 import {Show} from './show';
-import {NavigationComponent} from './nav.component';
+//import {NavigationComponent} from './nav.component';
 import {ShowService} from './show.service.ts';
 import {ShowsDetailComponent} from './shows-detail.component';
 
@@ -11,7 +11,7 @@ import {ShowsDetailComponent} from './shows-detail.component';
     selector: 'helloworld-app',
     templateUrl: 'app/shows.component.html',
     styleUrls: ['app/list_style.css'],
-    directives: [ShowsDetailComponent, NavigationComponent, GOOGLE_MAPS_DIRECTIVES],
+    directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES],
     providers: [ShowService]
 
 })
@@ -35,7 +35,7 @@ export class ShowListComponent implements OnInit {
     onSelect(show:Show) {
         this.selectedShow = show;
         console.log(this.selectedShow);
-        this.router.navigate(['/show', show.id])
+
     }
 
     getShows() {
