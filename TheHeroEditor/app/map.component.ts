@@ -2,6 +2,7 @@ import { Component, OnInit }    from '@angular/core';
 import {GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
 import {NavigationComponent} from './nav.component';
 import {ShowService} from './show.service.ts';
+import {Show} from './show';
 import {ShowsDetailComponent} from './shows-detail.component';
 // import { MapsAPILoader, NoOpMapsAPILoader, MouseEvent, GOOGLE_MAPS_PROVIDERS, GOOGLE_MAPS_DIRECTIVES } from 'angular2-google-maps/core';
 
@@ -12,10 +13,32 @@ import {ShowsDetailComponent} from './shows-detail.component';
 /*    directives: [GOOGLE_MAPS_DIRECTIVES],*/
     styleUrls:  ['app/list_style.css'],
     directives: [ShowsDetailComponent, NavigationComponent, GOOGLE_MAPS_DIRECTIVES],
+    providers: [ShowService]
 
 })
 
-export class Map{
+export class Map implements OnInit{
+
+    shows:Show[];
+
+    //Berlin Coordinates:
+    lat:number = 52.5243700;
+    lng:number = 13.4105300;
+
+    constructor(private showService:ShowService) {
+
+    }
+
+    getShows() {
+        this.showService.getShows().then(shows => this.shows = shows);
+    }
+
+    ngOnInit() {
+        this.getShows();
+    }
+
+
+
 
 }
 

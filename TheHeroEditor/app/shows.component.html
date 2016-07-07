@@ -38,3 +38,19 @@
 
     </sebm-google-map-marker>
 </sebm-google-map>
+
+
+<h1>Youtube</h1>
+
+<!--<div>
+    <form  [ng-form-model]="youtubeQuery">
+        <input type="text" ng-control="title">
+    </form>
+
+    <div *ng-for="#video of videos | rx">
+        <search-result [video]="video"></search-result>
+    </div>
+
+</div>-->
+
+<youtube-list [list]="videos" (play)="playSelectedVideo($event)"></youtube-list>

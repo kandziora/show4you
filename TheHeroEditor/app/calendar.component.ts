@@ -1,6 +1,9 @@
 import { Component, OnInit }    from '@angular/core';
 
 
+
+declare var event: any;
+
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/calendar.component.html',
@@ -9,6 +12,8 @@ import { Component, OnInit }    from '@angular/core';
 })
 
 export class Calendar{
+
+
 
 
 }

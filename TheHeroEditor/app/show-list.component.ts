@@ -6,12 +6,13 @@ import {Show} from './show';
 //import {NavigationComponent} from './nav.component';
 import {ShowService} from './show.service.ts';
 import {ShowsDetailComponent} from './shows-detail.component';
+import {YoutubeList} from './youtube.component';
 
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/shows.component.html',
     styleUrls: ['app/list_style.css'],
-    directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES],
+    directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES, YoutubeList],
     providers: [ShowService]
 
 })

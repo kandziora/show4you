@@ -9,6 +9,7 @@ import {Calendar}                        from './calendar.component';
 import {ShowDetailView}              from './shows-detail-view.component';
 
 
+
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/show.component.html',
