@@ -1,3 +1,6 @@
+/// <reference path="../typings/globals/google-apps-script/google-apps-script.calendar/index.d.ts" />
+// <amd-dependency path="google-calendar" />
+
 // Imports for loading & configuring the in-memory web api
 import {provide}    from '@angular/core';
 import {XHRBackend} from '@angular/http';

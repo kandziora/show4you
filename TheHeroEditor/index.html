@@ -16,7 +16,10 @@
 
     <script src="node_modules/typescript/lib/typescript.js"></script>
 
-    <!-- 2. Configure SystemJS -->
+    <script src="https://apis.google.com/js/client.js"></script>
+
+
+        <!-- 2. Configure SystemJS -->
     <script>
         System.config({
             transpiler: 'typescript',
@@ -34,21 +37,23 @@
                 '@angular/platform-browser-dynamic' : 'node_modules/@angular/platform-browser-dynamic',
 
                 'angular2-in-memory-web-api' : 'node_modules/angular2-in-memory-web-api',
-                'angular2-google-maps'       : 'node_modules/angular2-google-maps'
+                'angular2-google-maps'       : 'node_modules/angular2-google-maps',
+//                'google-calendar'            : 'typings/globals/google-apps-script/google-apps-script.calendar/index.d.ts'
             },
             packages: {
-                'app'                              : {main: 'main.ts', defaultExtension: 'ts'},
-                'rxjs'                             : {main: 'index.js'},
+                'app'                               : {main: 'main.ts', defaultExtension: 'ts'},
+                'rxjs'                              : {main: 'index.js'},
 
-                '@angular/core'                    : {main: 'index.js'},
-                '@angular/http'                    : {main: 'index.js'},
-                '@angular/common'                  : {main: 'index.js'},
-                '@angular/compiler'                : {main: 'index.js'},
-                '@angular/platform-browser'        : {main: 'index.js'},
-                '@angular/platform-browser-dynamic': {main: 'index.js'},
+                '@angular/core'                     : {main: 'index.js'},
+                '@angular/http'                     : {main: 'index.js'},
+                '@angular/common'                   : {main: 'index.js'},
+                '@angular/compiler'                 : {main: 'index.js'},
+                '@angular/platform-browser'         : {main: 'index.js'},
+                '@angular/platform-browser-dynamic' : {main: 'index.js'},
 
-                'angular2-in-memory-web-api'       : {main: 'index.js'},
-                'angular2-google-maps/core'        : {main: 'index.js'}
+                'angular2-in-memory-web-api'        : {main: 'index.js'},
+                'angular2-google-maps/core'         : {main: 'index.js'},
+//                'google-calendar'                   : {main: 'index.d.ts'}
             }
         });
         System.import('app/main')
