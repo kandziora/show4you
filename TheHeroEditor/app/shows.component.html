@@ -1,4 +1,3 @@
-<h1>{{title}}</h1>
 <h2>My Shows</h2>
 <ul class="shows">
     <li *ngFor="let show of shows" class="items"
@@ -11,46 +10,35 @@
     </li>
 </ul>
 
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<div id="show_map" *ngIf="selectedShow">
+    <h2>GoogleMaps : {{ title }}</h2>
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+        <sebm-google-map-marker
+                *ngFor="let show of shows; let i = index"
+                [latitude]="selectedShow.address_lat"
+                [longitude]="selectedShow.address_lng"
+                [markerDraggable]="true">
+
+            <sebm-google-map-info-window>
+                <strong>{{show.address}}</strong>
+            </sebm-google-map-info-window>
+
+
+        </sebm-google-map-marker>
+    </sebm-google-map>
+</div>
+
+
+<!-- Now in own component
 <button (click)="addShow()">Add New Show</button>
 <div *ngIf="addingShow">
     <my-show-detail *ngIf="!selectedShow" (close)="close($event)"></my-show-detail>
 </div>
-
+-->
 <my-show-detail *ngIf="selectedShow" [show]="selectedShow" (close)="close($event)">Loading details</my-show-detail>
 
 
-<h1>GoogleMaps : {{ title }}</h1>
-
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-
-<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="12">
-    <sebm-google-map-marker
-            *ngFor="let show of shows; let i = index"
-            [latitude]="show.address_lat"
-            [longitude]="show.address_lng"
-            [markerDraggable]="true">
-
-        <sebm-google-map-info-window>
-            <strong>{{show.address}}</strong>
-        </sebm-google-map-info-window>
 
 
-    </sebm-google-map-marker>
-</sebm-google-map>
-
-
-<h1>Youtube</h1>
-
-<!--<div>
-    <form  [ng-form-model]="youtubeQuery">
-        <input type="text" ng-control="title">
-    </form>
-
-    <div *ng-for="#video of videos | rx">
-        <search-result [video]="video"></search-result>
-    </div>
-
-</div>-->
-
-<youtube-list [list]="videos" (play)="playSelectedVideo($event)"></youtube-list>

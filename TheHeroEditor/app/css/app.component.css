@@ -25,7 +25,9 @@ li a:hover {
 }
 
 #copyright{
-    margin-top: 2%;
+    position: fixed;
+    bottom:0px;
+    margin-top: 3%;
     height: 50px;
     width: 100%;
     background-color: #555;

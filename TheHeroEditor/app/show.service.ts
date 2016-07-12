@@ -4,11 +4,13 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Show } from './show';
+import { Venue } from './venues';
 
 @Injectable()
 export class ShowService {
 
     private showsUrl = 'app/shows';  // URL to web api
+    private showsVeune = 'app/venues';  // URL to web api
 
     constructor(private http: Http) { }
 
@@ -19,9 +21,20 @@ export class ShowService {
             .catch(this.handleError);
     }
 
+    getVenues(): Promise<Venue[]> {
+        return this.http.get(this.showsVeune)
+            .toPromise()
+            .then(response => response.json().data)
+            .catch(this.handleError);
+    }
+
     getShow(id: number) {
         return this.getShows()
             .then(shows => shows.filter(show => show.id === id)[0]);
+    }
+    getVenue(id: number) {
+        return this.getVenues()
+            .then(venues => venues.filter(venues => venues.id === id)[0]);
     }
 
     save(show: Show): Promise<Show>  {

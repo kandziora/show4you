@@ -1,0 +1,32 @@
+<h1>All Venues</h1>
+
+<div id="venues">
+    <ul class="venues">
+        <li *ngFor="let venue of venues" class="items"
+            [class.selected]="venue === selectedVenue"
+            (click)="onSelect(venue)">
+
+            <span class="badge">{{venue.id}}</span> {{venue.venue}} | {{venue.address}}
+
+
+        </li>
+    </ul>
+</div>
+
+<div id="venue_map" *ngIf="selectedVenue">
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+        <sebm-google-map-marker
+
+                *ngFor="let venue of venues; let i = index"
+                [latitude]="selectedVenue.address_lat"
+                [longitude]="selectedVenue.address_lng"
+                [markerDraggable]="true">
+
+            <sebm-google-map-info-window>
+                <strong>{{venue.address}}</strong>
+            </sebm-google-map-info-window>
+
+
+        </sebm-google-map-marker>
+    </sebm-google-map>
+</div>

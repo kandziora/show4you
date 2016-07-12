@@ -1,6 +1,5 @@
 import { Component, OnInit }    from '@angular/core';
 import {GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
-import {NavigationComponent} from './nav.component';
 import {ShowService} from './show.service.ts';
 import {Show} from './show';
 import {ShowsDetailComponent} from './shows-detail.component';
@@ -11,8 +10,8 @@ import {ShowsDetailComponent} from './shows-detail.component';
     selector: 'helloworld-app',
     templateUrl: 'app/map.component.html',
 /*    directives: [GOOGLE_MAPS_DIRECTIVES],*/
-    styleUrls:  ['app/list_style.css'],
-    directives: [ShowsDetailComponent, NavigationComponent, GOOGLE_MAPS_DIRECTIVES],
+    styleUrls:  ['app/css/map.css'],
+    directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES],
     providers: [ShowService]
 
 })
