@@ -5,13 +5,15 @@ import {Show} from './show';
 import {NavigationComponent} from './nav.component';
 import {ShowService} from './show.service.ts';
 import {ShowsDetailComponent} from './shows-detail.component';
+import {GoogleCalComponent} from './google-calendar';
+import {GoogleCalService} from './google-calendar.service';
 
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/shows.component.html',
     styleUrls: ['app/list_style.css'],
-    directives: [ShowsDetailComponent, NavigationComponent, GOOGLE_MAPS_DIRECTIVES],
-    providers: [ShowService]
+    directives: [ShowsDetailComponent, NavigationComponent, GOOGLE_MAPS_DIRECTIVES, GoogleCalComponent],
+    providers: [ShowService, GoogleCalService]
 
 })
 
