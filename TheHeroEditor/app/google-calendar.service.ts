@@ -7,6 +7,7 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 declare var gapi:any;
+var scope:any;
 
 @Injectable()
 export class GoogleCalService {
@@ -20,6 +21,7 @@ export class GoogleCalService {
      * Check if current user has authorized this application.
      */
     checkAuth() {
+        scope = this;
         gapi.auth.authorize(
         {
             'client_id': this.CLIENT_ID,
@@ -39,8 +41,7 @@ export class GoogleCalService {
             // Hide auth UI, then load client library.
             authorizeDiv.style.display = 'none';
             console.log("load calendar Api", gapi);
-
-            this.loadCalendarApi();
+            scope.loadCalendarApi();
         } else {
             // Show auth UI, allowing the user to initiate authorization by
             // clicking authorize button.
@@ -67,7 +68,7 @@ export class GoogleCalService {
      */
     loadCalendarApi() {
         console.log("loadcalendarapi HOLA!!");
-        gapi.client.load('calendar', 'v3', this.listUpcomingEvents());
+        gapi.client.load('calendar', 'v3', scope.listUpcomingEvents);
     }
 
     /**
@@ -88,7 +89,7 @@ export class GoogleCalService {
 
         request.execute(function(resp) {
             var events = resp.items;
-            this.appendPre('Upcoming events:');
+            scope.appendPre('Upcoming events:');
 
             if (events.length > 0) {
                 for (let i = 0; i < events.length; i++) {
@@ -97,10 +98,10 @@ export class GoogleCalService {
                     if (!when) {
                         when = event.start.date;
                     }
-                    this.appendPre(event.summary + ' (' + when + ')')
+                    scope.appendPre(event.summary + ' (' + when + ')')
                 }
             } else {
-                this.appendPre('No upcoming events found.');
+                scope.appendPre('No upcoming events found.');
             }
 
         });
