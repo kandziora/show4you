@@ -7,6 +7,8 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 declare var gapi:any;
+
+//scope needed because this is not defined after checkAuth();
 var scope:any;
 
 @Injectable()
