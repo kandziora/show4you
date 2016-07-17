@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     lat:number = 52.5243700;
     lng:number = 13.4105300;
 
-    constructor(private showService:ShowService) {
+    constructor(private showService:ShowService, private googleCalService:GoogleCalService) {
         this.title = 'Shows for you';
     }
 
@@ -69,6 +69,10 @@ export class AppComponent implements OnInit {
                 }
             })
             .catch(error => this.error = error); // TODO: Display error message
+    }
+
+    handleAuthClick(event) {
+        this.googleCalService.handleAuthClick(event);
     }
 }
 

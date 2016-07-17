@@ -1,8 +1,9 @@
 /**
  * Created by jorgeayala on 07/07/16.
  */
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { Show } from './show';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -13,6 +14,9 @@ var scope:any;
 
 @Injectable()
 export class GoogleCalService {
+    @Input()
+    show:Show;
+
     CLIENT_ID:string = '120541098486-su6ilk1gtcenf9b0upa9hb53mokg0cl1.apps.googleusercontent.com';
     SCOPES:string[] = ['https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/calendar.readonly'];
 
@@ -38,17 +42,9 @@ export class GoogleCalService {
      * @param {Object} authResult Authorization result.
      */
     handleAuthResult(authResult) {
-        var authorizeDiv = document.getElementById('authorize-div');
         if (authResult && !authResult.error) {
             // Hide auth UI, then load client library.
-            authorizeDiv.style.display = 'none';
-            console.log("load calendar Api", gapi);
             scope.loadCalendarApi();
-        } else {
-            // Show auth UI, allowing the user to initiate authorization by
-            // clicking authorize button.
-            authorizeDiv.style.display = 'inline';
-            console.log("CalendarApi loaded");
         }
     }
 
@@ -69,8 +65,34 @@ export class GoogleCalService {
      * once client library is loaded.
      */
     loadCalendarApi() {
-        console.log("loadcalendarapi HOLA!!");
-        gapi.client.load('calendar', 'v3', scope.listUpcomingEvents);
+        gapi.client.load('calendar', 'v3', null);
+    }
+
+    event = {
+        'summary': 'Google I/O 2015 ',
+        'location': 'Schöneberger Ufer 67, 10785 Berlin',
+        'description': 'A chance to hear more about Google\'s developer products.',
+        'start': {
+            'dateTime': '2016-08-28T09:00:00',
+            'timeZone': 'Europe/Berlin'
+        },
+        'end': {
+            'dateTime': '2016-08-28T17:00:00',
+            'timeZone': 'Europe/Berlin'
+        }
+    };
+
+    insertNewEvent(show) {
+        scope.event.summary = show.name;
+        scope.event.location = show.address;
+        scope.event.description = "Pre Bands : " + show.support;
+
+        var request = gapi.client.calendar.events.insert({
+            'calendarId': 'primary',
+            'resource': scope.event
+        });
+
+        request.execute();
     }
 
     /**
@@ -79,7 +101,6 @@ export class GoogleCalService {
      * appropriate message is printed.
      */
     listUpcomingEvents() {
-        console.log("www", gapi);
         var request = gapi.client.calendar.events.list({
             'calendarId': 'primary',
             'timeMin': (new Date()).toISOString(),
@@ -89,37 +110,7 @@ export class GoogleCalService {
             'orderBy': 'startTime'
         });
 
-        request.execute(function(resp) {
-            var events = resp.items;
-            scope.appendPre('Upcoming events:');
-
-            if (events.length > 0) {
-                for (let i = 0; i < events.length; i++) {
-                    var event = events[i];
-                    var when = event.start.dateTime;
-                    if (!when) {
-                        when = event.start.date;
-                    }
-                    scope.appendPre(event.summary + ' (' + when + ')')
-                }
-            } else {
-                scope.appendPre('No upcoming events found.');
-            }
-
-        });
+        request.execute();
     }
-
-    /**
-     * Append a pre element to the body containing the given message
-     * as its text node.
-     *
-     * @param {string} message Text to be placed in pre element.
-     */
-    appendPre(message) {
-        var pre = document.getElementById('output');
-        var textContent = document.createTextNode(message + '\n');
-        pre.appendChild(textContent);
-    }
-
 
 }

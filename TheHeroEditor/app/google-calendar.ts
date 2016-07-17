@@ -1,33 +1,24 @@
 /**
  * Created by jorgeayala on 13/07/16.
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { GoogleCalService } from './google-calendar.service';
+import {Show} from "./show";
 
 
 @Component({
     selector: 'google-calendar',
-    styleUrls:  ['app/shows-detail.component.css'],
+    styleUrls:  ['app/list_style.css'],
     template: `
-    <div id="google_calendar">
-        <h2>Google Calendar!</h2>
-           
-            
-        <div id="authorize-div" style="display: none">
-            <span>Authorize access to Google Calendar API</span>
-        
-            <!--Button for the user to click to initiate auth sequence -->
-            <img class="logo" (click)="handleAuthClick(event)" src="/app/google_signin.png"/>
-        </div>
-    
-        <pre id="output"></pre>
-    </div>
+            <button class="btnGUI" (click)="insertNewEvent(show)">Insert New Event</button>
 `,
     providers: [GoogleCalService]
 })
 
 export class GoogleCalComponent  {
+    @Input()
+    show:Show;
 
     constructor(private googleCalService: GoogleCalService) {
         this.googleCalService = googleCalService;
@@ -43,5 +34,9 @@ export class GoogleCalComponent  {
 
     ngOnInit() {
         this.checkAuth();
+    }
+
+    insertNewEvent(show) {
+        this.googleCalService.insertNewEvent(show);
     }
 }

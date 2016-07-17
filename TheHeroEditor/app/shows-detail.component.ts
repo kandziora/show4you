@@ -15,6 +15,7 @@ import {ShowDetailEdit} from "./shows-detail-edit.component";
             edit            
             </h3>
             
+            
             <div><label>id: </label>{{show.id}}</div>
             <div>
                 <label>name: </label>
