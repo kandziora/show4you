@@ -32,7 +32,7 @@
     position: relative;
     top: -3px;
 }
-.shows .badge {
+.badge {
     display: inline-block;
     font-size: small;
     color: black;
@@ -45,4 +45,18 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+}
+
+
+.sebm-google-map-container {
+    height: 350px;
+}
+
+
+
+#show_map{
+    float: right;
+    width: 50%;
+    min-width: 30%;
+    margin-right: 5%;
 }

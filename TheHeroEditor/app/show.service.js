@@ -26,6 +26,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/toPromise'
                 function ShowService(http) {
                     this.http = http;
                     this.showsUrl = 'app/shows'; // URL to web api
+                    this.showsVeune = 'app/venues'; // URL to web api
                 }
                 ShowService.prototype.getShows = function () {
                     return this.http.get(this.showsUrl)
@@ -36,6 +37,10 @@ System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/toPromise'
                 ShowService.prototype.getShow = function (id) {
                     return this.getShows()
                         .then(function (shows) { return shows.filter(function (show) { return show.id === id; })[0]; });
+                };
+                ShowService.prototype.getVenue = function (id) {
+                    return this.getVenues()
+                        .then(function (venues) { return venues.filter(function (venues) { return venues.id === id; })[0]; });
                 };
                 ShowService.prototype.save = function (show) {
                     if (show.id) {
