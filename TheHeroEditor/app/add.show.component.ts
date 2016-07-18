@@ -24,7 +24,7 @@ export class AddShowComponent{
 
 
     constructor(private showService:ShowService, private router: Router) {
-     
+
     }
 
     getShows() {

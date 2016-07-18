@@ -34,6 +34,12 @@ System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/toPromise'
                         .then(function (response) { return response.json().data; })
                         .catch(this.handleError);
                 };
+                ShowService.prototype.getVenues = function () {
+                    return this.http.get(this.showsVeune)
+                        .toPromise()
+                        .then(function (response) { return response.json().data; })
+                        .catch(this.handleError);
+                };
                 ShowService.prototype.getShow = function (id) {
                     return this.getShows()
                         .then(function (shows) { return shows.filter(function (show) { return show.id === id; })[0]; });

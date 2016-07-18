@@ -5,8 +5,6 @@ import { Show } from './show';
 import {ShowService} from "./show.service";
 import {ShowDetailView} from "./shows-detail-view.component";
 import {ShowDetailEdit} from "./shows-detail-edit.component";
-import { ShowDate} from './show-date.component';
-
 
 //import {StatusSelector} from "./status.selector";
 
@@ -19,34 +17,29 @@ import { ShowDate} from './show-date.component';
 
 export class ShowsDetailComponent implements OnInit {
     @Input()
-    show: Show;
+        show: Show;
 
     @Input() status;
 
     @Output()
-    close = new EventEmitter();
+        close = new EventEmitter();
 
     error: any;
     navigated = false; // true if navigated here
 
     constructor(
-        private showService: ShowService,
-        private router:Router,
-        private routeParams:RouteSegment) {
+        private showService: ShowService) {
     }
 
 
     ngOnInit() {
-/*        if (this.show !== undefined) {
+        if (this.show !== undefined) {
             let id = +this.show.id;
             this.navigated = true;
         } else {
             this.navigated = false;
             this.show = new Show();
-        }*/
-        let id = +this.routeParams.getParam('id');
-        this.showService.getShow(id)
-            .then(show => this.show = show);
+        }
 
     }
 
