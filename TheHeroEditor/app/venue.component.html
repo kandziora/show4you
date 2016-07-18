@@ -6,10 +6,18 @@
             [class.selected]="venue === selectedVenue"
             (click)="onSelect(venue)">
 
-            <span class="badge">{{venue.id}}</span> {{venue.venue}} | {{venue.address}}
+            <span class="badge">{{venue.venue}}</span> {{venue.address}}
+
+
 
 
         </li>
+<!--            <span *ngIf="selectedVenue">
+                <li *ngFor="let show of shows | showfilter: selectedVenue.venue">
+
+
+                <span class="badge">{{show.name}}</span> {{show.date}}
+            </span>-->
     </ul>
 </div>
 
@@ -23,7 +31,7 @@
                 [markerDraggable]="true">
 
             <sebm-google-map-info-window>
-                <strong>{{venue.address}}</strong>
+                <strong>{{selectedVenue.venue}} | {{selectedVenue.address}}</strong>
             </sebm-google-map-info-window>
 
 

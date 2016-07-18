@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import {GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
+import { Show } from './show';
+//import { MyFilterPipe } from './venue-pipe';
 
 import { Venue } from './venues';
 import {ShowService} from "./show.service";
@@ -8,9 +10,10 @@ import {ShowService} from "./show.service";
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/venue.component.html',
-    styleUrls: ['app/list_style.css'],
+    styleUrls: ['app/css/venue_style.css'],
     directives: [GOOGLE_MAPS_DIRECTIVES],
-    providers: [ShowService]
+    providers: [ShowService]/*,
+    pipes: [MyFilterPipe]*/
 
 })
 
@@ -19,6 +22,9 @@ export class VenueComponent implements OnInit{
     @Input()
     venues: Venue[];
     selectedVenue: Venue;
+    show: Show;
+/*    filterargs = {title: 'Astra'};
+    items = [{title: 'hello world'}, {title: 'hello kitty'}, {title: 'foo bar'}];*/
 
     @Output()
     close = new EventEmitter();

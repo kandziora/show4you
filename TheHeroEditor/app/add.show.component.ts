@@ -20,7 +20,7 @@ export class AddShowComponent{
 
     shows:Show[];
     selectedShow:Show;
-    addingShow = false;
+    addingShow = true;
 
 
     constructor(private showService:ShowService, private router: Router) {

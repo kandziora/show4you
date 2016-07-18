@@ -2,17 +2,19 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 
-<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="12">
-    <sebm-google-map-marker
-            *ngFor="let show of shows; let i = index"
-            [latitude]="show.address_lat"
-            [longitude]="show.address_lng"
-            [markerDraggable]="true">
 
-        <sebm-google-map-info-window>
-            <strong>{{show.address}}</strong>
-        </sebm-google-map-info-window>
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+        <sebm-google-map-marker
+                *ngFor="let show of shows; let i = index"
+                [latitude]="show.address_lat"
+                [longitude]="show.address_lng"
+                [markerDraggable]="true">
+
+            <sebm-google-map-info-window>
+                <strong  *ngFor="let show of shows"> {{show.name}} | {{show.address}}</strong>
+
+            </sebm-google-map-info-window>
 
 
-    </sebm-google-map-marker>
-</sebm-google-map>
+        </sebm-google-map-marker>
+    </sebm-google-map>
