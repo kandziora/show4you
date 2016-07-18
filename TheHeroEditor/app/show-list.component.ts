@@ -3,16 +3,17 @@ import {GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
 import {Router} from '@angular/router';
 
 import {Show} from './show';
-//import {NavigationComponent} from './nav.component';
 import {ShowService} from './show.service.ts';
 import {ShowsDetailComponent} from './shows-detail.component';
+import {GoogleCalComponent} from './google-calendar';
+import {GoogleCalService} from './google-calendar.service';
 
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/shows.component.html',
     styleUrls: ['app/list_style.css'],
-    directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES],
-    providers: [ShowService]
+    directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES, GoogleCalComponent],
+    providers: [ShowService, GoogleCalService]
 
 })
 
@@ -28,7 +29,7 @@ export class ShowListComponent implements OnInit {
     lat:number = 52.5243700;
     lng:number = 13.4105300;
 
-    constructor(private showService:ShowService, private router: Router) {
+    constructor(private showService:ShowService, private router: Router, private googleCalServive:GoogleCalService) {
         this.title = 'Shows for you';
     }
 
@@ -70,6 +71,12 @@ export class ShowListComponent implements OnInit {
             })
             .catch(error => this.error = error); // TODO: Display error message
     }
+
+    handleAuthClick(event) {
+        this.googleCalServive.handleAuthClick(event);
+        console.log("hola desde show-list.component.ts");
+    }
+
 }
 
 

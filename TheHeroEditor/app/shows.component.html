@@ -1,11 +1,23 @@
 <h2>My Shows</h2>
+
+<div id="authorize-div">
+    <span>Authorize access to Google Calendar API</span>
+
+    <!--Button for the user to click to initiate auth sequence -->
+    <img class="logo" (click)="handleAuthClick(event)" src="/app/google_signin.png"/>
+</div>
+
 <ul class="shows">
     <li *ngFor="let show of shows" class="items"
         [class.selected]="show === selectedShow"
         (click)="onSelect(show)">
 
         <span class="badge">{{show.id}}</span> {{show.name}}
-        <button style="float: right;" class="delete-button" (click)="delete(show, $event)">Delete</button>
+
+        <div  style="float: right;">
+            <button class="btnGUI" (click)="delete(show, $event)">Delete</button>
+            <google-calendar [show]="show">Load GoogleCal</google-calendar>
+        </div>
 
     </li>
 </ul>
@@ -38,5 +50,3 @@
 </div>
 -->
 <my-show-detail *ngIf="selectedShow" [show]="selectedShow" (close)="close($event)">Loading details</my-show-detail>
-
-

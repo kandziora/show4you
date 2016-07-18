@@ -49,7 +49,7 @@
 
 
 .sebm-google-map-container {
-    height: 350px;
+    height: 450px;
 }
 
 
@@ -59,4 +59,13 @@
     width: 50%;
     min-width: 30%;
     margin-right: 5%;
+}
+.btnGUI{
+    font-family: Arial;
+    background-color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer; cursor: hand;
+    margin-right: 5px;
 }

@@ -1,9 +1,9 @@
-
 <div *ngIf="show" id="detail_show">
     <h2>{{show.name}} details!</h2>
     <h3>
         edit
     </h3>
+
 
     <div><label>id: </label>{{show.id}}</div>
     <div>
@@ -19,25 +19,10 @@
         <input [(ngModel)]="show.support" placeholder="support"/>
     </div>
     <div>
-        <label>venue: </label>
-        <input [(ngModel)]="show.venue" placeholder="venue"/>
-    </div>
-    <div>
         <label>date: </label>
         <input [(ngModel)]="show.date" placeholder="date"/>
     </div>
-
-<!--    <div>
-        <todo-input></todo-input>
-        <status-selector (select)="status = $event"></status-selector>
-        <todo-list [status]="status"></todo-list>
-    </div>
     <div>
-        <ul>
-            <li *ngFor="#show.venue of shows | started: status"></li>
-        </ul>
-    </div>-->
-<!--    <div>
         <label>address: </label>
         <input [(ngModel)]="show.address" placeholder="Berlin, Germany"/>
     </div>
@@ -48,7 +33,7 @@
     <div>
         <label>lng: </label>
         <input [(ngModel)]="show.address_lng" placeholder="13.404954"/>
-    </div>-->
+    </div>
 
     <button (click)="save()">Save</button>
 </div>
