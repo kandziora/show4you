@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-
+import {Component, EventEmitter, OnInit, Input,  Output, Pipe, HostListener} from '@angular/core';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router';
+import {Control} from '@angular/common';
 import {Show} from './show';
 //import {NavigationComponent} from './nav.component';
 import {ShowService} from './show.service.ts';
@@ -9,8 +9,8 @@ import {ShowsDetailComponent} from './shows-detail.component';
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/add.show.component.html',
-    styleUrls: ['app/list_style.css'],
-    directives: [ShowsDetailComponent],
+    styleUrls: ['app/shows-detail.component.css'],
+    directives: [ShowsDetailComponent, ROUTER_DIRECTIVES],
     providers: [ShowService]
 
 })
@@ -18,13 +18,52 @@ import {ShowsDetailComponent} from './shows-detail.component';
 
 export class AddShowComponent{
 
+
+    @Input()
+    show: Show;
     shows:Show[];
     selectedShow:Show;
     addingShow = true;
 
+    @Output()
+        close = new EventEmitter();
 
-    constructor(private showService:ShowService, private router: Router) {
+    error: any;
+    navigated = false; // true if navigated here
 
+    constructor(private showService:ShowService) {
+
+    }
+
+    addShow() {
+        this.addingShow = true;
+        this.selectedShow = null;
+        this.show = new Show();
+    }
+
+    ngOnInit() {
+        if (this.show !== undefined) {
+            let id = +this.show.id;
+            this.navigated = true;
+
+        } else {
+            this.navigated = false;
+            this.show = new Show();
+        }
+    }
+
+    save() {
+        this.showService
+            .save(this.show)
+            .then(show => {
+                this.show = show; // saved show, w/ id if new
+                this.close.emit(show);
+                console.log(this.show);
+
+            })
+            .catch(error => this.error = error); // TODO: Display error message
+        this.selectedShow = null;
+        this.addingShow = false;
     }
 
     getShows() {
@@ -32,20 +71,6 @@ export class AddShowComponent{
     }
 
 
-
-
-    addShow() {
-        this.addingShow = true;
-        this.selectedShow = null;
-    }
-
-
-    close(savedShow:Show) {
-        this.addingShow = false;
-        if (savedShow) {
-            this.getShows();
-        }
-    }
 
 
 

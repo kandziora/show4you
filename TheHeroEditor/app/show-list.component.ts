@@ -11,7 +11,7 @@ import {StringToDatePipe} from './string-to-date.pipe';
 
 @Component({
     selector: 'helloworld-app',
-    templateUrl: 'app/shows.component.html',
+    templateUrl: 'app/show-list.component.html',
     styleUrls: ['app/list_style.css'],
     directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES, GoogleCalComponent],
     providers: [ShowService, GoogleCalService],
@@ -26,6 +26,7 @@ export class ShowListComponent implements OnInit {
     selectedShow:Show;
     addingShow = false;
     error:any;
+    value : boolean = true;
 
     //Berlin Coordinates:
     lat:number = 52.5243700;
@@ -78,6 +79,13 @@ export class ShowListComponent implements OnInit {
         this.googleCalServive.handleAuthClick(event);
     }
 
+    makeTrue(){
+            this.value = true;
+    }
+
+    makeFalse(){
+            this.value = !this.value;
+    }
 }
 
 

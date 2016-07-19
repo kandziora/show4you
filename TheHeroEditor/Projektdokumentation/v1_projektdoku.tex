@@ -92,16 +92,91 @@ Jetzt erstellen wir für unser Projekt einige services. Dazu erstelle ich erstma
 \section{Http}
 
 \newpage
-\section{Routing}
+\part{Routing}
+Beim Routing hat durch die unvollständige Dokumentation von Angular, sehr die aus unserer Arbeitsgruppe geholfen. Als erstes wurde unsere app.component "entlastet" in dem sie nur noch zum verlinken/routing da sein soll. Dazu wurde eine neue Component erstellt show-list.component, die ab jetzt die ganzen shows in einer Liste anzgeigen soll. 
+\newline
+\newline
+Zudem wurden jetzt extra Components und dazuhgehörige htmls und ab und zu auch css Dateien für eine extra Maps Ansicht, eine Calendar Ansicht, eine Venues Ansicht und eine Addshows Ansicht erstellt. Die Addshows ist dazu da shows hinzuzufügen, abseits von der Show Ansicht. 
+\newline
+\newline
+Die Venues Unterseite soll wieder eine Lexika mit allen in Berlin vorhanden Veranstaltungsräumen funktionieren, heißt man kann nachschauen was es so für welche gibt und sieht gleich auf einer google maps Karte wo die sich befinden.
+\newline
+\newline
+Bei der Maps Ansicht werden auf einer Karte alle Veranstaltungen gleichzeitig angezeigt, damit man sich einen guten überblick verschaffen kann.
+\newline
+\newline
+Eingebunden wurde das Routing in der maint.ts mit Router Providers. In der Index.html bei den maps und packages mit  @angular/router. Dann natürlich auch bei unserer neuen Hauptnavigationsseite app.component mit 
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=1.2]{links/routes1.jpg}
+\label{scene_intro_scale}
+\end{center}
+\end{figure}
 
 \newpage
+\part{Api Anbindungen}
 \section{Maps Api}
+Jorge hat die hat nach der anbindung der Maps Api recherchiert. Und eingebunden. Dazu musste einmal die Maps Api in die main.ts mit
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=1.0]{links/maps1.jpg}
+\label{scene_intro_scale}
+\end{center}
+\end{figure}
+
+eingebunden werden. Zudem musste im bootstrap 
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=1.3]{links/maps2.jpg}
+\label{scene_intro_scale}
+\end{center}
+\end{figure}
+
+eingetragen werden. Zudem musste die in die Index.html eingebunden werden. Einmal in die map: mit 
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=1.3]{links/maps3.jpg}
+\label{scene_intro_scale}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=1.1]{links/maps4.jpg}
+\label{scene_intro_scale}
+\end{center}
+\end{figure}
+
+und dann bei den packages 
+
+
+
+Somit kann man dann auf die Maps Api zugreifen. 
+
+\newpage 
+In den Components in denen wir dann die Maps benutzen kann diese dann importiert werden. Die muss dann auch bei den directives eingetragen werden. Es wurde eine Grundkoordinate festgelegt welche mit lat:number = 52.5243700;
+    lng:number = 13.4105300; den Bereich von Berlin zeigt.
+    
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=1.0]{links/mapshtml.jpg}
+\label{scene_intro_scale}
+\end{center}
+\end{figure}
+
 
 \newpage
 \section{Calendar Api}
 
+Bei der Calender Api war die Herandgehensweise ähnlich wie bei der Maps Api, außer dass es weit aus mehr komplikationen gab. Was zum einen an der noch sehr schlechten Dokumentation lag.
+
 \newpage
-\section{Finalisierung}
+\part{Finalisierung}
+Bei der Finalisierung wurden verschiedene Verbesserungen vorgenommen. So wurde zum einen die Detail Ansicht der einzelnen Shows aufgeteilt in eine View und eine Edit Ansicht, die sich per Button wechseln lassen. Zum anderen kann man die Detail Ansicht jetzt wieder schließen. Des Weiteren Zeigt jetzt die Kurzinformation in der Liste nicht nur noch den Namen der Show an sonder auch das Datum und die Venue. Die Addshows Component wurde so verändert dass nach dem eintragen und speicher dass Formular erstmal verschwindet, falls man noch eine weitere Show hinzufügen möchte kann man das Formular wieder mit einen Button aufrufen.
 
 \newpage
 

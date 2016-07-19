@@ -60,12 +60,19 @@
     min-width: 30%;
     margin-right: 5%;
 }
-.btnGUI{
+
+.btnGUI {
     font-family: Arial;
     background-color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
-    cursor: pointer; cursor: hand;
+    cursor: pointer;
+    cursor: hand;
     margin-right: 5px;
+}
+
+#close-button{
+    float: right;
+    margin-top: 15px;
 }
