@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output, Pipe, HostListener, ElementRef } from '@angular/core';
 import {Control} from '@angular/common';
-import {Observable} from 'rxjs/Rx';
 import { Show } from './show';
 import {ShowService} from "./show.service";
-import {ShowDetailView} from "./shows-detail-view.component";
-import {ShowDetailEdit} from "./shows-detail-edit.component";
+import {Venue } from './venues';
+import {ShowListComponent} from './show-show-list.component';
+/*import { NgForm }    from '@angular/forms';*/
 
 //import {StatusSelector} from "./status.selector";
 
@@ -12,14 +12,17 @@ import {ShowDetailEdit} from "./shows-detail-edit.component";
     selector: 'my-show-detail',
     styleUrls:  ['app/shows-detail.component.css'],
     templateUrl: 'app/shows-detail.component.html',
-    directives: [ShowDetailView, ShowDetailEdit]
+    directives: [ShowsDetailComponent],
+    providers: [ShowService]
 })
 
 export class ShowsDetailComponent implements OnInit {
+
+    changeShow: boolean = true;
+    shows:Show[];
+    selectedShow:Show;
     @Input()
         show: Show;
-
-    @Input() status;
 
     @Output()
         close = new EventEmitter();
@@ -27,20 +30,24 @@ export class ShowsDetailComponent implements OnInit {
     error: any;
     navigated = false; // true if navigated here
 
+
+
+
     constructor(
         private showService: ShowService) {
-    }
 
+
+    }
 
     ngOnInit() {
         if (this.show !== undefined) {
             let id = +this.show.id;
             this.navigated = true;
+
         } else {
             this.navigated = false;
             this.show = new Show();
         }
-
     }
 
     save() {
@@ -58,4 +65,22 @@ export class ShowsDetailComponent implements OnInit {
         this.close.emit(savedShow);
         if (this.navigated) { window.history.back(); }
     }
+
+    change(){
+        this.changeShow = !this.changeShow;
+    }
+
+    delete(show:Show, event:any) {
+        event.stopPropagation();
+        this.showService
+            .delete(show)
+            .then(res => {
+                this.shows = this.shows.filter(h => h !== show);
+                if (this.selectedShow === show) {
+                    this.selectedShow = null;
+                }
+            })
+            .catch(error => this.error = error); // TODO: Display error message
+    }
+
 }

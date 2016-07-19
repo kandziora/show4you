@@ -9,7 +9,7 @@ import {ShowsDetailComponent} from './shows-detail.component';
 
 @Component({
     selector: 'helloworld-app',
-    templateUrl: 'app/shows.component.html',
+    templateUrl: 'app/show-list.component.html',
     styleUrls: ['app/list_style.css'],
     directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES],
     providers: [ShowService]
@@ -23,6 +23,7 @@ export class ShowListComponent implements OnInit {
     selectedShow:Show;
     addingShow = false;
     error:any;
+    value : boolean = true;
 
     //Berlin Coordinates:
     lat:number = 52.5243700;
@@ -69,6 +70,14 @@ export class ShowListComponent implements OnInit {
                 }
             })
             .catch(error => this.error = error); // TODO: Display error message
+    }
+
+    makeTrue(){
+            this.value = true;
+    }
+
+    makeFalse(){
+            this.value = !this.value;
     }
 }
 

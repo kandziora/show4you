@@ -60,3 +60,8 @@
     min-width: 30%;
     margin-right: 5%;
 }
+
+#close-button{
+    float: right;
+    margin-top: 15px;
+}

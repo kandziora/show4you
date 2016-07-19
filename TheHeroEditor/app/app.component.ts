@@ -6,7 +6,6 @@ import {ShowsDetailComponent}        from './shows-detail.component';
 import {ShowListComponent}           from './show-list.component';
 import {Map}                         from './map.component';
 import {Calendar}                    from './calendar.component';
-import {ShowDetailView}              from './shows-detail-view.component';
 import {AddShowComponent}            from './add.show.component';
 import {VenueComponent}              from './venue.component';
 
@@ -26,8 +25,7 @@ import {VenueComponent}              from './venue.component';
     {path: '/map', component: Map},
     {path: '/calendar', component: Calendar},
     {path: '/addShow', component: AddShowComponent},
-    {path: '/venues', component: VenueComponent},
-    {path: '/show/:id', component: ShowDetailView }
+    {path: '/venues', component: VenueComponent}
 ])
 
 export class AppComponent {

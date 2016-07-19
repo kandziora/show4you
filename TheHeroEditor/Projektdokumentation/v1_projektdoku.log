@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  12 JUL 2016 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  19 JUL 2016 05:05
 entering extended mode
 **v1_projektdoku.tex
 (v1_projektdoku.tex
@@ -949,6 +949,21 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 
 LaTeX Warning: Label `scene_intro_scale' multiply defined.
 
+
+LaTeX Warning: Label `scene_intro_scale' multiply defined.
+
+
+LaTeX Warning: Label `scene_intro_scale' multiply defined.
+
+
+LaTeX Warning: Label `scene_intro_scale' multiply defined.
+
+
+LaTeX Warning: Label `scene_intro_scale' multiply defined.
+
+
+LaTeX Warning: Label `scene_intro_scale' multiply defined.
+
 )
 LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 25.
 LaTeX Font Info:    Try loading font information for OML+jkp on input line 25.
@@ -1072,54 +1087,128 @@ LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 30.
 File: ujkpsyc.fd 2006/08/15 v1.0
 ) [1
 
-{C:/Users/joerg/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [1] [2]
-<links/import_erste_components.jpg, id=14, 347.04657pt x 35.38219pt>
+{C:/Users/joerg/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (v1_projekt
+doku.toc)
+\tf@toc=\write3
+
+[1] [2] [3]
+<links/import_erste_components.jpg, id=17, 347.04657pt x 35.38219pt>
 File: links/import_erste_components.jpg Graphic file (type jpg)
 
 <use links/import_erste_components.jpg>
 Package pdftex.def Info: links/import_erste_components.jpg used on input line 6
-0.
+5.
 (pdftex.def)             Requested size: 416.4538pt x 42.4584pt.
- [3 <./links/import_erste_components.jpg>]
-Overfull \hbox (37.89967pt too wide) in paragraph at lines 74--75
+ [4 <./links/import_erste_components.jpg>]
+Overfull \hbox (37.89967pt too wide) in paragraph at lines 79--80
 \T1/jkp/m/n/12 Klas-se Show-Ser-vice ex-por-tie-ren, wel-che ei-ne get-ter Me-t
 ho-de hat. Mit re-turn Pro-mis.resolve(Shows).
  []
 
-<links/getShows.jpg, id=18, 372.64218pt x 45.16875pt>
+<links/getShows.jpg, id=21, 372.64218pt x 45.16875pt>
 File: links/getShows.jpg Graphic file (type jpg)
  <use links/getShows.jpg>
-Package pdftex.def Info: links/getShows.jpg used on input line 78.
+Package pdftex.def Info: links/getShows.jpg used on input line 83.
 (pdftex.def)             Requested size: 447.16838pt x 54.20221pt.
 
-[4 <./links/getShows.jpg>] [5] [6] [7] [8] [9] [10]
-LaTeX Font Info:    Try loading font information for TS1+jkp on input line 106.
+[5 <./links/getShows.jpg>] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 96--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--109
+
+ []
+
+<links/routes1.jpg, id=32, 328.22626pt x 15.05624pt>
+File: links/routes1.jpg Graphic file (type jpg)
+ <use links/routes1.jpg>
+Package pdftex.def Info: links/routes1.jpg used on input line 112.
+(pdftex.def)             Requested size: 393.86952pt x 18.06738pt.
+
+[8 <./links/routes1.jpg>] <links/maps1.jpg, id=36, 511.9125pt x 16.56187pt>
+File: links/maps1.jpg Graphic file (type jpg)
+
+<use links/maps1.jpg>
+Package pdftex.def Info: links/maps1.jpg used on input line 124.
+(pdftex.def)             Requested size: 511.91125pt x 16.56183pt.
+
+Overfull \hbox (28.21439pt too wide) in paragraph at lines 124--126
+ [] 
+ []
+
+<links/maps2.jpg, id=37, 123.46124pt x 15.05624pt>
+File: links/maps2.jpg Graphic file (type jpg)
+ <use links/maps2.jpg>
+Package pdftex.def Info: links/maps2.jpg used on input line 133.
+(pdftex.def)             Requested size: 160.49957pt x 19.57309pt.
+
+<links/maps3.jpg, id=38, 354.57469pt x 15.80907pt>
+File: links/maps3.jpg Graphic file (type jpg)
+ <use links/maps3.jpg>
+Package pdftex.def Info: links/maps3.jpg used on input line 142.
+(pdftex.def)             Requested size: 460.94704pt x 20.55174pt.
+
+<links/maps4.jpg, id=39, 296.60812pt x 15.05624pt>
+File: links/maps4.jpg Graphic file (type jpg)
+ <use links/maps4.jpg>
+Package pdftex.def Info: links/maps4.jpg used on input line 149.
+(pdftex.def)             Requested size: 326.26993pt x 16.5619pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9 <./links/maps1.jpg> <./links/maps2.jpg> <./links/maps3.jpg>]
+<links/mapshtml.jpg, id=43, 500.62032pt x 197.98969pt>
+File: links/mapshtml.jpg Graphic file (type jpg)
+
+<use links/mapshtml.jpg>
+Package pdftex.def Info: links/mapshtml.jpg used on input line 166.
+(pdftex.def)             Requested size: 500.6191pt x 197.9892pt.
+
+Overfull \hbox (16.92223pt too wide) in paragraph at lines 166--168
+ [] 
+ []
+
+[10 <./links/maps4.jpg> <./links/mapshtml.jpg>] [11] [12]
+LaTeX Font Info:    Try loading font information for TS1+jkp on input line 186.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\kpfonts\ts1jkp.fd"
 File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
-) [11]
+) [13]
 (v1_projektdoku.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6714 strings out of 493673
- 87448 string characters out of 3141530
- 151180 words of memory out of 3000000
- 9932 multiletter control sequences out of 15000+200000
- 56556 words of font info for 64 fonts, out of 3000000 for 9000
+ 6777 strings out of 493673
+ 88448 string characters out of 3141530
+ 151181 words of memory out of 3000000
+ 9984 multiletter control sequences out of 15000+200000
+ 73257 words of font info for 94 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 27i,7n,32p,1046b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,7n,32p,1046b,276s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/kpfonts/kpfonts-expert.enc
 }{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpbn8a.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpmn8a.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpmne.pfb>
-Output written on v1_projektdoku.pdf (12 pages, 71680 bytes).
+Output written on v1_projektdoku.pdf (14 pages, 158731 bytes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
+ 70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
