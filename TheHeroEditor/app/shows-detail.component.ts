@@ -7,8 +7,8 @@ import {Venue } from './venues';
 
 @Component({
     selector: 'my-show-detail',
-    styleUrls:  ['app/shows-detail.component.css'],
-    templateUrl: 'app/shows-detail.component.html',
+    styleUrls:  ['app/css/shows-detail.component.css'],
+    templateUrl: 'app/html/shows-detail.component.html',
     directives: [ShowsDetailComponent],
     providers: [ShowService],
     pipes: [StringToDatePipe]

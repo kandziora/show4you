@@ -8,8 +8,8 @@ import {ShowsDetailComponent} from './shows-detail.component';
 
 @Component({
     selector: 'helloworld-app',
-    templateUrl: 'app/add.show.component.html',
-    styleUrls: ['app/shows-detail.component.css'],
+    templateUrl: 'app/html/add.show.component.html',
+    styleUrls: ['app/css/shows-detail.component.css'],
     directives: [ShowsDetailComponent, ROUTER_DIRECTIVES],
     providers: [ShowService]
 

@@ -13,7 +13,7 @@ import {VenueComponent}              from './venue.component';
 
 @Component({
     selector: 'helloworld-app',
-    templateUrl: 'app/show.component.html',
+    templateUrl: 'app/html/show.component.html',
     providers: [ ShowService],
 
     styleUrls: ['app/css/app.component.css'],

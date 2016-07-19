@@ -9,7 +9,7 @@ import {ShowsDetailComponent} from './shows-detail.component';
 
 @Component({
     selector: 'helloworld-app',
-    templateUrl: 'app/map.component.html',
+    templateUrl: 'app/html/map.component.html',
 /*    directives: [GOOGLE_MAPS_DIRECTIVES],*/
     styleUrls:  ['app/css/map.css'],
     directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES],

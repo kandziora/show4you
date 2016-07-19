@@ -6,8 +6,8 @@ declare var event: any;
 
 @Component({
     selector: 'helloworld-app',
-    templateUrl: 'app/calendar.component.html',
-    styleUrls:  ['app/list_style.css'],
+    templateUrl: 'app/html/calendar.component.html',
+    styleUrls:  ['app/css/list_style.css'],
 
 })
 

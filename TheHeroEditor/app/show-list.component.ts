@@ -11,8 +11,8 @@ import {StringToDatePipe} from './string-to-date.pipe';
 
 @Component({
     selector: 'helloworld-app',
-    templateUrl: 'app/show-list.component.html',
-    styleUrls: ['app/list_style.css'],
+    templateUrl: 'app/html/show-list.component.html',
+    styleUrls: ['app/css/list_style.css'],
     directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES, GoogleCalComponent],
     providers: [ShowService, GoogleCalService],
     pipes: [StringToDatePipe]

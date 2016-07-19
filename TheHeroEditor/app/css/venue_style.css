@@ -8,13 +8,13 @@
 }
 
 #venue_map {
-    float: left;
-    width: 65%;
+    float: right;
+    width: 60%;
     min-width: 30%;
 
 }
 .badge {
-    width: 105px;
+    width: 115px;
     display: inline-block;
     font-size: small;
     color: black;

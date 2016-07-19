@@ -9,7 +9,7 @@ import {Show} from "./show";
 
 @Component({
     selector: 'google-calendar',
-    styleUrls:  ['app/list_style.css'],
+    styleUrls:  ['app/css/list_style.css'],
     template: `
             <button class="btnGUI" (click)="insertNewEvent(show)">Save in GoogleCal</button>
 `,

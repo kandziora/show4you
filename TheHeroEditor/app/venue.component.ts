@@ -10,7 +10,7 @@ import {StringToDatePipe} from './string-to-date.pipe';
 
 @Component({
     selector: 'helloworld-app',
-    templateUrl: 'app/venue.component.html',
+    templateUrl: 'app/html/venue.component.html',
     styleUrls: ['app/css/venue_style.css'],
     directives: [GOOGLE_MAPS_DIRECTIVES],
     providers: [ShowService],
