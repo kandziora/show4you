@@ -1,0 +1,23 @@
+\select@language {ngerman}
+\contentsline {part}{I\hspace {1em}Idee und Ziel}{2}
+\contentsline {section}{\numberline {1}Idee}{2}
+\contentsline {section}{\numberline {2}Ziel Definition}{2}
+\contentsline {part}{II\hspace {1em}Erstellung einer einfachen Angular2 App}{3}
+\contentsline {section}{\numberline {3}Erste Editierung}{3}
+\contentsline {section}{\numberline {4}Interaktion und Detail Ansicht + Styling}{3}
+\contentsline {subsection}{\numberline {4.1}Detail Ansicht mit +ngif}{3}
+\contentsline {part}{III\hspace {1em}Components, Services, Html Auslagerung J\IeC {\"o}rg || Parrallel neue Angular2 update und Http Jorge}{4}
+\contentsline {section}{\numberline {5}Components}{4}
+\contentsline {subsection}{\numberline {5.1}show.ts}{4}
+\contentsline {subsection}{\numberline {5.2}show-detail.component.ts}{4}
+\contentsline {section}{\numberline {6}Services}{5}
+\contentsline {section}{\numberline {7}Angular2 Update}{6}
+\contentsline {section}{\numberline {8}Http}{7}
+\contentsline {part}{IV\hspace {1em}Routing}{8}
+\contentsline {part}{V\hspace {1em}Api Anbindungen}{9}
+\contentsline {section}{\numberline {9}Maps Api}{9}
+\contentsline {section}{\numberline {10}Calendar Api}{11}
+\contentsline {part}{VI\hspace {1em}Finalisierung}{12}
+\contentsline {section}{\numberline {11}Weiteres}{13}
+\contentsline {subsection}{\numberline {11.1}Literatur}{13}
+\contentsline {subsection}{\numberline {11.2}Grafiken und Quellen}{13}

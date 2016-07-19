@@ -6,13 +6,15 @@ import { Show } from './show';
 
 import { Venue } from './venues';
 import {ShowService} from "./show.service";
+import {StringToDatePipe} from './string-to-date.pipe';
 
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/venue.component.html',
     styleUrls: ['app/css/venue_style.css'],
     directives: [GOOGLE_MAPS_DIRECTIVES],
-    providers: [ShowService]/*,
+    providers: [ShowService],
+    pipes: [StringToDatePipe]/*,
     pipes: [MyFilterPipe]*/
 
 })
@@ -23,6 +25,7 @@ export class VenueComponent implements OnInit{
     venues: Venue[];
     selectedVenue: Venue;
     show: Show;
+    shows:Show[];
 /*    filterargs = {title: 'Astra'};
     items = [{title: 'hello world'}, {title: 'hello kitty'}, {title: 'foo bar'}];*/
 
@@ -43,13 +46,19 @@ export class VenueComponent implements OnInit{
     onSelect(venue:Venue) {
         this.selectedVenue = venue;
         console.log(this.selectedVenue);
+
     }
 
     getVenues() {
         this.showService.getVenues().then(venues => this.venues = venues);
     }
 
+    getShows() {
+        this.showService.getShows().then(shows => this.shows = shows);
+    }
+
     ngOnInit() {
     this.getVenues();
+        this.getShows();
 }
 }

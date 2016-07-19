@@ -8,9 +8,10 @@
 }
 
 #venue_map {
-    float: right;
+    float: left;
     width: 65%;
     min-width: 30%;
+
 }
 .badge {
     width: 105px;
@@ -28,6 +29,9 @@
     border-radius: 4px 0 0 4px;
 }
 
+#selected_shows{
+    margin-bottom: 5%;
+}
 
 
 
@@ -65,4 +69,6 @@
 
 #venues{
     float: left;
+
+    margin: 3%;
 }

@@ -4,11 +4,13 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    height: 50px;
 }
 
 li {
     float: left;
-    margin: 1.2em;
+    margin-right: 1.2em;
+
 }
 
 li a {
@@ -25,7 +27,7 @@ li a:hover {
 }
 
 #copyright{
-    position: fixed;
+    position: relative;
     bottom:0px;
     margin-top: 3%;
     height: 50px;
@@ -34,8 +36,13 @@ li a:hover {
 
 }
 #copyright_p{
-
+    position: relative;
     margin-right: 5%;
     color: #DDD;
     float: right;
+}
+
+#logo_head {
+    margin-top: -30px;
+    margin-bottom: -5px;
 }

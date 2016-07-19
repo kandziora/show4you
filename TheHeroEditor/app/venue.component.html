@@ -1,4 +1,4 @@
-<h1>All Venues</h1>
+<h2>All Venues</h2>
 
 <div id="venues">
     <ul class="venues">
@@ -12,12 +12,16 @@
 
 
         </li>
-<!--            <span *ngIf="selectedVenue">
-                <li *ngFor="let show of shows | showfilter: selectedVenue.venue">
+            <span *ngIf="selectedVenue" id="selected_shows">
+                <p>Show in selected Venue:</p>
+                <li *ngFor="let show of shows" class="items"
+                    [hidden]="show.venue != selectedVenue.venue"
+                    (click)="onSelect(venue)">
 
 
-                <span class="badge">{{show.name}}</span> {{show.date}}
-            </span>-->
+                    <span class="badge">{{show.name}}</span>
+                    - {{ show.date | stringToDate | date:'dd/MM/yyyy' }}, {{ show.time }}
+            </span>
     </ul>
 </div>
 
@@ -38,3 +42,4 @@
         </sebm-google-map-marker>
     </sebm-google-map>
 </div>
+<br style="clear:left;">

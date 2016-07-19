@@ -30,7 +30,8 @@
 <div *ngIf="value">
 
     <div id="show_map" *ngIf="selectedShow" [hidden]="!selectedShow">
-        <button id="close-button" (click)="makeFalse()">X</button>
+        <button class="right-buttons" (click)="makeFalse()">X</button>
+        <button class="right-buttons" (click)="delete(selectedShow, $event)">Delete Show</button>
         <h2>GoogleMaps : {{ title }}</h2>
         <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="12">
             <sebm-google-map-marker
@@ -55,6 +56,7 @@
         <my-show-detail *ngIf="!selectedShow" (close)="close($event)"></my-show-detail>
     </div>
     -->
+
     <my-show-detail *ngIf="selectedShow" [show]="selectedShow" (close)="close($event)">Loading details</my-show-detail>
 
 </div>

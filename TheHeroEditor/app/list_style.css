@@ -1,4 +1,6 @@
-
+h2 {
+    color: #111111;
+}
 .selected {
     background-color: #CFD8DC !important;
     color: white;
@@ -52,7 +54,9 @@
     height: 450px;
 }
 
-
+.logo {
+    width: 135px;
+}
 
 #show_map{
     float: right;
@@ -72,7 +76,8 @@
     margin-right: 5px;
 }
 
-#close-button{
+.right-buttons{
     float: right;
     margin-top: 15px;
+    margin-left: 15px;
 }
