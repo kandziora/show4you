@@ -21,6 +21,7 @@ import {VenueComponent}              from './venue.component';
 })
 
 @Routes([
+    {path: '/', component: ShowListComponent},
     {path: '/event-list', component: ShowListComponent},
     {path: '/map', component: Map},
     {path: '/calendar', component: Calendar},
