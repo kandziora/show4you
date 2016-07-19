@@ -13,7 +13,7 @@
         (click)="onSelect(show)">
 
         <span class="badge">{{show.id}}</span> {{show.name}}
-         - {{ show.venue }} - {{ show.date | stringToDate | date:'shortDate' }}, {{ show.time }}
+         - {{ show.venue }} - {{ show.date | stringToDate | date:'dd/MM/yyyy' }}, {{ show.time }}
 
         <div  style="float: right;">
             <google-calendar [show]="show">Load GoogleCal</google-calendar>
