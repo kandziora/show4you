@@ -87,6 +87,14 @@ export class GoogleCalService {
         scope.event.location = show.address;
         scope.event.description = "Pre Bands : " + show.support;
 
+        var end_date:Date = new Date(show.date);
+
+        scope.event.start.dateTime = show.date;
+        scope.event.end.dateTime = show.date;
+
+        end_date.setHours(end_date.getHours() + 2);
+        scope.event.end.dateTime = end_date;
+
         var request = gapi.client.calendar.events.insert({
             'calendarId': 'primary',
             'resource': scope.event
