@@ -13,9 +13,9 @@
         (click)="onSelect(show)">
 
         <span class="badge">{{show.id}}</span> {{show.name}}
+         - {{ show.venue }} - {{ show.date | stringToDate | date:'shortDate' }}, {{ show.time }}
 
         <div  style="float: right;">
-            <button class="btnGUI" (click)="delete(show, $event)">Delete</button>
             <google-calendar [show]="show">Load GoogleCal</google-calendar>
         </div>
 

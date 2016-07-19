@@ -7,13 +7,15 @@ import {ShowService} from './show.service.ts';
 import {ShowsDetailComponent} from './shows-detail.component';
 import {GoogleCalComponent} from './google-calendar';
 import {GoogleCalService} from './google-calendar.service';
+import {StringToDatePipe} from './string-to-date.pipe';
 
 @Component({
     selector: 'helloworld-app',
     templateUrl: 'app/shows.component.html',
     styleUrls: ['app/list_style.css'],
     directives: [ShowsDetailComponent, GOOGLE_MAPS_DIRECTIVES, GoogleCalComponent],
-    providers: [ShowService, GoogleCalService]
+    providers: [ShowService, GoogleCalService],
+    pipes: [StringToDatePipe]
 
 })
 
@@ -74,7 +76,6 @@ export class ShowListComponent implements OnInit {
 
     handleAuthClick(event) {
         this.googleCalServive.handleAuthClick(event);
-        console.log("hola desde show-list.component.ts");
     }
 
 }

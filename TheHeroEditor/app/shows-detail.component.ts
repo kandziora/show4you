@@ -1,28 +1,28 @@
 import { Component, EventEmitter, Input, OnInit, Output, Pipe, HostListener, ElementRef } from '@angular/core';
-import {Control} from '@angular/common';
-import {Observable} from 'rxjs/Rx';
 import { Show } from './show';
 import {ShowService} from "./show.service";
 import {ShowDetailView} from "./shows-detail-view.component";
 import {ShowDetailEdit} from "./shows-detail-edit.component";
+import {StringToDatePipe} from './string-to-date.pipe';
 
-//import {StatusSelector} from "./status.selector";
 
 @Component({
     selector: 'my-show-detail',
     styleUrls:  ['app/shows-detail.component.css'],
     templateUrl: 'app/shows-detail.component.html',
-    directives: [ShowDetailView, ShowDetailEdit]
+    directives: [ShowDetailView, ShowDetailEdit],
+    pipes: [StringToDatePipe]
 })
 
 export class ShowsDetailComponent implements OnInit {
     @Input()
-        show: Show;
+    show: Show;
 
-    @Input() status;
+    @Input()
+    status;
 
     @Output()
-        close = new EventEmitter();
+    close = new EventEmitter();
 
     error: any;
     navigated = false; // true if navigated here

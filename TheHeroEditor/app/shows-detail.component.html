@@ -20,7 +20,12 @@
     </div>
     <div>
         <label>date: </label>
-        <input [(ngModel)]="show.date" placeholder="date"/>
+        <input [(ngModel)]="show.date"/>
+        {{ show.date | stringToDate | date:'shortDate' }}
+    </div>
+    <div>
+        <label>time: </label>
+        <input [(ngModel)]="show.time" placeholder="time"/>
     </div>
     <div>
         <label>address: </label>

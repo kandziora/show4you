@@ -11,7 +11,7 @@ import {Show} from "./show";
     selector: 'google-calendar',
     styleUrls:  ['app/list_style.css'],
     template: `
-            <button class="btnGUI" (click)="insertNewEvent(show)">Insert New Event</button>
+            <button class="btnGUI" (click)="insertNewEvent(show)">Save in GoogleCal</button>
 `,
     providers: [GoogleCalService]
 })
@@ -37,7 +37,7 @@ export class GoogleCalComponent  {
     }
 
     insertNewEvent(show) {
-        console.log("aefawef");
+        
         this.googleCalService.insertNewEvent(show);
     }
 }
